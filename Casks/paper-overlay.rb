@@ -14,13 +14,19 @@ cask "paper-overlay" do
   zap trash: "~/Library/Preferences/com.d4ok1.PaperOverlay.plist"
 
   caveats <<~EOS
-    Paper Overlay is not signed with an Apple Developer ID.
-    The first time you open it, macOS will block it. To allow it:
-      1. Try to open PaperOverlay.app once (close the warning dialog)
-      2. Open System Settings > Privacy & Security and click "Open Anyway"
+    Paper Overlay is not signed with an Apple Developer ID,
+    so macOS blocks it the first time you open it. To allow it:
+      1. Open PaperOverlay.app once. When the warning appears,
+         click "Done" (do NOT click "Move to Trash").
+      2. Open System Settings > Privacy & Security, scroll down,
+         and click "Open Anyway". You can open the pane with:
+           open "x-apple.systempreferences:com.apple.preference.security"
 
     Developer ID で署名していないため、初回は macOS に止められます。
-    一度開こうとしたあと、「システム設定」→「プライバシーとセキュリティ」で
-    「このまま開く」を押してください。
+      1. PaperOverlay.app を一度開き、警告が出たら「完了」で閉じる
+         （「ゴミ箱に入れる」は押さない）
+      2. 「システム設定」→「プライバシーとセキュリティ」を下までスクロールし、
+         「このまま開く」を押す（上の open コマンドでも開けます）
+    2 回目からは普通に開けます。
   EOS
 end
