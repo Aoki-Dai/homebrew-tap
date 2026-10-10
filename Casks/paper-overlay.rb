@@ -7,7 +7,7 @@ cask "paper-overlay" do
   desc "Menu bar app that overlays a paper-like texture on the whole screen"
   homepage "https://github.com/Aoki-Dai/paper-overlay"
 
-  depends_on macos: ">= :tahoe"
+  depends_on macos: :tahoe
 
   app "PaperOverlay.app"
 
